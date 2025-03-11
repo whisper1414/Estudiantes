@@ -9,7 +9,7 @@ namespace Api.Controllers
     [Route("api/[controller]")]
     public class EstudianteController(IEstudianteRepository estudianteRepository) : ControllerBase
     {
-        [HttpGet(Name = "bitacora")]
+        [HttpGet("bitacora")]
         public async Task<ActionResult<Estudiante>> Obtener(int idEstudiante)
         {
             if (idEstudiante == 0)
@@ -23,7 +23,7 @@ namespace Api.Controllers
             return Ok(estudiante);
         }
 
-        [HttpPost(Name = "registrar")]
+        [HttpPost("registrar")]
         public async Task<ActionResult<Estudiante>> Registrar(RegistrarEstudianteDto estudiante)
         {
             if (estudiante.IdEstudiante == 0)
@@ -47,7 +47,7 @@ namespace Api.Controllers
             return Ok(estudiante);
         }
 
-        [HttpPut(Name = "actualizar")]
+        [HttpPut("actualizar")]
         public async Task<ActionResult<Estudiante>> Actualizar(EstudianteDto estudiante)
         {
             if (estudiante.IdEstudiante == 0)

@@ -9,7 +9,7 @@ namespace Api.Controllers
     [ApiController]
     public class MateriaController(IConsultaMateriasService consultaMateriasService) : ControllerBase
     {
-        [HttpGet(Name = "consultaMateriasUsuario")]
+        [HttpGet("consultaMateriasUsuario")]
         public async Task<ActionResult<Estudiante>> Obtener(string codEstudiante)
         {
             if (string.IsNullOrEmpty(codEstudiante))
