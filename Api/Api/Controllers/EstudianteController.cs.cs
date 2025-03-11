@@ -47,7 +47,7 @@ namespace Api.Controllers
             return Ok(estudiante);
         }
 
-        [HttpPost(Name = "actualizar")]
+        [HttpPut(Name = "actualizar")]
         public async Task<ActionResult<Estudiante>> Actualizar(EstudianteDto estudiante)
         {
             if (estudiante.IdEstudiante == 0)
@@ -69,7 +69,7 @@ namespace Api.Controllers
             if (!await estudianteRepository.SaveAllChangesAsync())
                 return BadRequest("Error: No se pudo actualizar el estudiante");
 
-            return Ok(estudiante);
+            return Ok();
         }
     }
 }

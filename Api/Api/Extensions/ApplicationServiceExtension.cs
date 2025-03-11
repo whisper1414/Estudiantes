@@ -1,6 +1,7 @@
 ﻿using Api.Data;
 using Api.Interfaces;
 using Api.Repositories;
+using Api.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Extensions
@@ -18,6 +19,7 @@ namespace Api.Extensions
 
             // Implentacion de repositorios
             services.AddScoped<IEstudianteRepository, EstudianteRepository>();
+            services.AddScoped<IConsultaMateriasService, ConsultaMateriasService>();
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
